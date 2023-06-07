@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.*;
 import br.com.fiap.gs.service.UsuarioDocumentoService;
 import br.com.fiap.gs.entity.UsuarioDocumento;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:19006")
 @RequestMapping("/api/login/usuario/documento")
 @RestController
 public class UsuarioDocumentoController {

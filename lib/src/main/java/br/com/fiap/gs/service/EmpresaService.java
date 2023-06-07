@@ -24,13 +24,15 @@ public class EmpresaService {
 	}
 	
 	public Empresa salvar(Empresa newEmpresa) {
+		Empresa empresa = new Empresa();
 		try {
 			dao.salvar(newEmpresa);
 			dao.commit();
+			empresa.setCodigo(dao.findByEmail(newEmpresa.getEmail()).getCodigo());
 		} catch (CommitException e) {
 			System.out.println(e.getMessage());
 		}
-		return newEmpresa;
+		return empresa;
 	}
 	
 	public Empresa findById(Integer id ) {

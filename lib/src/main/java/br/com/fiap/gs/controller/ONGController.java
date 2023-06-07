@@ -9,8 +9,8 @@ import jakarta.validation.Valid;
 import br.com.fiap.gs.entity.ONG;
 
 
-@CrossOrigin(origins = "http://localhost:3000")
-@RequestMapping("/api/login/ong")
+@CrossOrigin(origins = "http://localhost:19006")
+@RequestMapping("/api/ong")
 @RestController
 public class ONGController {
 

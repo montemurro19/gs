@@ -9,4 +9,10 @@ public class EmpresaDaoImpl  extends GenericDaoImpl<Empresa, Integer> implements
 	public EmpresaDaoImpl(EntityManager em) {
 		super(em);
 	}
+
+	public Empresa findByEmail(String email) {
+		return em.createQuery("from Empresa u where u.email = :email", Empresa.class)
+				.setParameter("email", email)
+				.getSingleResult();
+	}
 }

@@ -9,7 +9,7 @@ import jakarta.validation.Valid;
 import br.com.fiap.gs.entity.Time;
 
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:19006")
 @RequestMapping("/api/time")
 @RestController
 public class TimeController {

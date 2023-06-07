@@ -26,13 +26,15 @@ public class UsuarioService {
 	}
 	
 	public Usuario salvar(Usuario newUsuario) {
+		Usuario usuario = new Usuario();
 		try {
 			dao.salvar(newUsuario);
 			dao.commit();
+			usuario.setCodigo(dao.findByEmail(newUsuario.getEmail()).getCodigo());
 		} catch (CommitException e) {
 			System.out.println(e.getMessage());
 		}
-		return newUsuario;
+		return usuario;
 	}
 	
 	public Usuario findById(int id ) {

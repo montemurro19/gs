@@ -33,7 +33,7 @@ public class EmpresaEndereco {
 	@Column(name="COMPLEMENTO", length = 200)
 	private String complemento;
 	
-	@ManyToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	private Empresa empresa;
 	
 	public EmpresaEndereco() {}

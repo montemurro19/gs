@@ -27,7 +27,7 @@ public class Empresa {
 	private String telefone;
 	
 	@NotBlank(message = "Email é obrigatorio")
-	@Column(name="EMAIL", length = 50, nullable = false)
+	@Column(name="EMAIL", length = 50, nullable = false, unique=true)
 	private String email;
 	
 	@NotBlank(message = "Senha é obrigatorio")
@@ -38,6 +38,9 @@ public class Empresa {
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="dt_criacao", nullable = false, updatable = false)
 	private Calendar dtCadastro;
+
+	@OneToOne(mappedBy = "empresa")
+	private UsuarioEndereco usuarioEndereco;	
 
 	public Empresa () {}
 	

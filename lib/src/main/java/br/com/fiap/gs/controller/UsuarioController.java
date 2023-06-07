@@ -16,8 +16,9 @@ import br.com.fiap.gs.model.Credencial;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.authentication.AuthenticationManager;
 
-@CrossOrigin(origins = "http://localhost:3000")
+
 @RequestMapping("/api")
+@CrossOrigin(origins = "http://localhost:19006")
 @RestController
 public class UsuarioController {	
 		
@@ -40,9 +41,8 @@ public class UsuarioController {
 
     @PostMapping("/registrar")
     public ResponseEntity<Usuario> registrar(@RequestBody @Valid Usuario usuario){
-        usuario.setSenha(encoder.encode(usuario.getSenha()));
-        usuarioService.salvar(usuario);
-        return ResponseEntity.status(HttpStatus.CREATED).body(usuario);
+        usuario.setSenha(encoder.encode(usuario.getSenha()));        
+        return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.salvar(usuario));
     }
 
     @PostMapping("/login")

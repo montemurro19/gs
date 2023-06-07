@@ -6,7 +6,7 @@ import br.com.fiap.gs.service.UsuarioEnderecoService;
 import br.com.fiap.gs.entity.UsuarioEndereco;
 
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:19006")
 @RequestMapping("/api/login/usuario/endereco")
 @RestController
 public class UsuarioEnderecoController {

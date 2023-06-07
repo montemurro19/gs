@@ -8,7 +8,7 @@ import jakarta.validation.Valid;
 import br.com.fiap.gs.entity.Empresa;
 
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:19006")
 @RequestMapping("/api/empresa")
 @RestController
 public class EmpresaController {

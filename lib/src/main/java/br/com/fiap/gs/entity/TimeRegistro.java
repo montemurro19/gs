@@ -20,6 +20,8 @@ public class TimeRegistro {
 	@ManyToMany(mappedBy = "registro")
 	private List<ONG> ong;
 
+	@ManyToOne
+	private Time time;
 	public TimeRegistro() {}
 	
 	public TimeRegistro(String ativo) {

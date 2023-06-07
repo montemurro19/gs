@@ -34,7 +34,7 @@ public class Usuario implements UserDetails {
 	private Calendar dtNascimento;
 	
 	@NotBlank(message = "Email é obrigatorio")
-	@Column(name="EMAIL", length = 50, nullable = false)
+	@Column(name="EMAIL", length = 50, nullable = false, unique=true)
 	private String email;
 	
 	@NotBlank(message = "Senha é obrigatorio")

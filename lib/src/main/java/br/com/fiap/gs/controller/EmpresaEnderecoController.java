@@ -6,8 +6,8 @@ import br.com.fiap.gs.service.EmpresaEnderecoService;
 import br.com.fiap.gs.entity.EmpresaEndereco;
 
 
-@CrossOrigin(origins = "http://localhost:3000")
-@RequestMapping("/api/login/empresa/endereco")
+@CrossOrigin(origins = "http://localhost:19006")
+@RequestMapping("/api/empresa/endereco")
 @RestController
 public class EmpresaEnderecoController {
 

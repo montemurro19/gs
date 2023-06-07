@@ -38,6 +38,10 @@ public class SecurityConfig {
         return http
                     .authorizeHttpRequests()
                         .requestMatchers(HttpMethod.POST, "/api/registrar").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/login/usuario/documento/{id}").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/login/usuario/endereco/{id}").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/empresa").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/empresa/endereco/{id}").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/login").permitAll()
                         .anyRequest().authenticated()
                     .and()
