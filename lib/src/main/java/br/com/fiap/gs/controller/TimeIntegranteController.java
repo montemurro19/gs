@@ -14,9 +14,9 @@ public class TimeIntegranteController {
 
 	private TimeIntegranteService timeIntegranteService = new TimeIntegranteService();	
 
-	@PostMapping
-	public TimeIntegrante newTimeIntegrante(@Valid @RequestBody TimeIntegrante newTimeIntegrante) {		
-		return timeIntegranteService.salvar(newTimeIntegrante);
+	@PostMapping("/{id}")
+	public TimeIntegrante newTimeIntegrante(@Valid @RequestBody TimeIntegrante newTimeIntegrante, @PathVariable Integer id) {		
+		return timeIntegranteService.salvar(id, newTimeIntegrante);
 	}
 
 	@GetMapping("/{id}")

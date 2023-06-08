@@ -5,11 +5,11 @@
 		<properties>
 			<property name="hibernate.show_sql" value="true"/>
 			<property name="hibernate.format_sql" value="true" />
-			<property name="hibernate.hbm2ddl.auto" value="create"/>
+			<property name="hibernate.hbm2ddl.auto" value="update"/>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle12cDialect"/>
 			<property name="jakarta.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver" />
-			<property name="jakarta.persistence.jdbc.user" value="rm95680"/>
-			<property name="jakarta.persistence.jdbc.password" value="091000"/>
+			<property name="jakarta.persistence.jdbc.user" value="rm93285"/>
+			<property name="jakarta.persistence.jdbc.password" value="160104"/>
 			<property name="jakarta.persistence.jdbc.url" value="jdbc:oracle:thin:@oracle.fiap.com.br:1521:orcl"/>
 		</properties>	
 	</persistence-unit>

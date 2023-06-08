@@ -25,16 +25,6 @@ public class TimeIntegranteService {
 		return usuarioList;
 	}
 	
-	public TimeIntegrante salvar(TimeIntegrante newTimeIntegrante) {
-		try {
-			dao.salvar(newTimeIntegrante);
-			dao.commit();
-		} catch (CommitException e) {
-			System.out.println(e.getMessage());
-		}
-		return newTimeIntegrante;
-	}
-	
 	public TimeIntegrante salvar(Integer id, TimeIntegrante newTimeIntegrante) {
 		newTimeIntegrante.setTime(timeService.findById(id));
 		try {

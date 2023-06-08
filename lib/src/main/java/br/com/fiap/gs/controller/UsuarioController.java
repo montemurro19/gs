@@ -12,6 +12,7 @@ import br.com.fiap.gs.service.UsuarioService;
 import jakarta.validation.Valid;
 import br.com.fiap.gs.entity.Usuario;
 import br.com.fiap.gs.model.Credencial;
+import br.com.fiap.gs.model.LoginResponse;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -46,10 +47,12 @@ public class UsuarioController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<Object> login(@RequestBody @Valid Credencial credencial){
+    public ResponseEntity<LoginResponse> login(@RequestBody @Valid Credencial credencial){
+		LoginResponse login = new LoginResponse();
         manager.authenticate(credencial.toAuthentication());
-        var token = tokenService.generateToken(credencial);
-        return ResponseEntity.ok(token);
+        login.setToken(tokenService.generateToken(credencial));
+		login.setUserId(usuarioService.findByEmail(credencial.email()).get().getCodigo());		
+        return ResponseEntity.ok(login);
     }
 	
 	@GetMapping("/login/{id}")

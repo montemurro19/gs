@@ -35,6 +35,8 @@ public class ONG {
 			inverseJoinColumns = @JoinColumn(name="Registro_ID"))
 	private List<TimeRegistro> registro;
 
+    public ONG () {}
+
 	public ONG(String nome, String regiaoAtuacao, String descricao) {
 		super();
 		this.nome = nome;

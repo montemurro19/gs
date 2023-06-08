@@ -40,7 +40,7 @@ public class Empresa {
 	private Calendar dtCadastro;
 
 	@OneToOne(mappedBy = "empresa")
-	private UsuarioEndereco usuarioEndereco;	
+	private EmpresaEndereco empresaEndereco;	
 
 	public Empresa () {}
 	

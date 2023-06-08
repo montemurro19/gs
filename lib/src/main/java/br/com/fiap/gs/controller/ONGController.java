@@ -23,7 +23,7 @@ public class ONGController {
 
 	@PostMapping
 	public ONG newONG(@Valid @RequestBody ONG newONG) {		
-		return ongService.salvar(newONG);
+		return ongService.atualizar(newONG);
 	}
 
 	@GetMapping("/{id}")
@@ -33,7 +33,7 @@ public class ONGController {
 
 	@PutMapping
 	public ONG replaceONG(@RequestBody ONG newONG) {		
-		return ongService.salvar(newONG);
+		return ongService.atualizar(newONG);
 	}
 
 	@DeleteMapping("/{id}")

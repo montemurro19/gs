@@ -18,12 +18,25 @@ public class ONGService {
 	
 	private ONGDao dao = new ONGDaoImpl(em);
 	
+    private EmpresaService empresaService = new EmpresaService();	
+
 	public List<ONG> listarTodos(){
 		List<ONG> usuarioList = dao.listar();
 		return usuarioList;
+	}	
+
+	public ONG salvar(Integer id, ONG newONG) {
+		newONG.setEmpresa(empresaService.findById(id));
+		try {
+			dao.salvar(newONG);
+			dao.commit();
+		} catch (CommitException e) {
+			System.out.println(e.getMessage());
+		}
+		return newONG;
 	}
 	
-	public ONG salvar(ONG newONG) {
+	public ONG atualizar(ONG newONG) {
 		try {
 			dao.salvar(newONG);
 			dao.commit();
